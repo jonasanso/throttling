@@ -2,18 +2,18 @@ package controllers
 
 import java.util.Date
 
+import play.api.libs.concurrent.Akka
+import play.api.libs.iteratee.{Concurrent, Enumerator}
+import play.api.libs.iteratee.Concurrent.Channel
+import play.api._
+import play.api.mvc._
+
 import akka.actor.{Props, Actor}
 import akka.contrib.throttle.TimerBasedThrottler
 import akka.contrib.throttle.Throttler._
-import play.api.libs.iteratee.Concurrent.Channel
 
-import play.api.libs.iteratee.{Concurrent, Enumerator}
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
-
-import play.api.libs.concurrent.Akka
-import play.api._
-import play.api.mvc._
 
 object Application extends Controller {
 
